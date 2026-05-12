@@ -1,0 +1,112 @@
+:root {
+    --capitol-dark: #1a1a1a;
+    --panem-gold: #f1c40f;
+    --blood-red: #c0392b;
+    --tribute-white: #ffffff;
+    --distrito-gray: #2d3436;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle, #2c3e50 0%, #000000 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--tribute-white);
+}
+
+.arena-container {
+    width: 90%;
+    max-width: 600px;
+    z-index: 10;
+}
+
+/* Burbuja de Pregunta Estilo Redondeado */
+.question-bubble {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--panem-gold);
+    border-radius: 40px;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(241, 196, 15, 0.2);
+}
+
+.lore-text {
+    font-style: italic;
+    color: var(--panem-gold);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+}
+
+/* Grilla de 3 Respuestas */
+.options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.answer-pill {
+    background: var(--tribute-white);
+    border-radius: 50px; /* Redondeado total */
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+    color: var(--capitol-dark);
+    font-weight: bold;
+}
+
+.answer-pill:hover {
+    transform: translateX(10px);
+    background: var(--panem-gold);
+}
+
+.letter-circle {
+    background: var(--capitol-dark);
+    color: var(--panem-gold);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 1.1em;
+}
+
+/* Radio oculto pero funcional */
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + .answer-pill {
+    border-color: var(--panem-gold);
+    box-shadow: 0 0 15px var(--panem-gold);
+}
+
+.btn-submit {
+    background: var(--panem-gold);
+    color: var(--capitol-dark);
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.1em;
+    font-weight: 800;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-submit:hover {
+    background: #fff;
+    box-shadow: 0 0 20px var(--panem-gold);
+}

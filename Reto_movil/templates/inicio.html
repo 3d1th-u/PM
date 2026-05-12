@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survival Guide: Los Juegos de la programación móvil</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="arena-container">
+        <div class="question-bubble">
+            <div class="icon-q"></div>
+            <h2>{{ nivel.titulo }}</h2>
+            <p class="lore-text">"{{ nivel.lore }}"</p>
+            <div style="font-size: 0.8em; color: #636e72; background: #eee; padding: 5px; border-radius: 5px;">
+                <strong>PISTA DEL PATROCINADOR:</strong> {{ nivel.info }}
+            </div>
+            {% if error %}<p style="color: #d63031; font-weight: bold; margin-top: 10px;">{{ error }}</p>{% endif %}
+        </div>
+
+        {% if nivel.siguiente %}
+        <form action="/avanzar/{{ request.path.split('/')[-1] or 'reglas' }}" method="POST">
+            {% for p in nivel.preguntas %}
+                {% set pregunta_idx = loop.index0 %}
+                <h3 style="color: white; text-align: center; text-shadow: 1px 1px 2px black;">{{ p.q }}</h3>
+                
+                <div class="options-grid">
+                    {% set alphabet = 'abc' %}
+                    {% for opcion in opciones[pregunta_idx] %}
+                        <label>
+                            <input type="radio" name="ans{{ pregunta_idx }}" value="{{ opcion }}" required>
+                            <div class="answer-pill">
+                                <div class="letter-circle">{{ alphabet[loop.index0] }}</div>
+                                <span>{{ opcion }}</span>
+                            </div>
+                        </label>
+                    {% endfor %}
+                </div>
+                <br>
+            {% endfor %}
+
+            <div class="question-bubble" style="padding: 20px; margin-top: 20px;">
+                <label style="cursor: pointer;">
+                    <input type="checkbox" name="compromiso" required> 
+                    <strong>Ofrezco mi honor como tributo para cumplir estas normas.</strong>
+                </label>
+                <button type="submit" class="btn-submit">ENVIAR AL CAPITOLIO</button>
+            </div>
+        </form>
+        {% else %}
+            <div class="question-bubble">
+                <h1 style="color: #f1c40f;">¡VICTORIA TOTAL!</h1>
+                <p>El cuatrimestre Mayo-Agosto 2026 te pertenece.</p>
+                <a href="/" style="color: #2ecc71; font-weight: bold; text-decoration: none;">VOLVER AL DISTRITO 12</a>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
