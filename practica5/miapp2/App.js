@@ -11,15 +11,18 @@ export default function App() {
   return (
     <View style={styles.container}>
       
-      <Perfil2
-      nombre="Edith Uribe" 
+      <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+
+      <Perfil2 estiloE={styles.targetaVerde}
+      nombre="Chabela" 
       carrera="Sitemas" 
       materia="programacion movil" 
       cuatri="noveno"
       >
       </Perfil2>
-      <Text>----------------------------------------------------------------</Text>
-      <Text>----------------------------------------------------------------</Text>   
+
+      <Perfil2 estiloE={styles.targetaRoja} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+      
 
     </View>
   );
@@ -32,5 +35,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    flexDirection:'column',
   },
+  targetaRoja:{backgroundColor:'#FF6B6B'},
+  targetaVerde:{backgroundColor:'#6BCB77'},
 });
+
