@@ -1,28 +1,18 @@
 
 /*zona1: importaciones de componentes y archivos */
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image} from 'react-native';
-import {Saludo} from './components/Saludo';
-import {Salu2} from './components/Salu2';
-import { Perfil2 } from './components/Perfil';
+import { StyleSheet, Text, View} from 'react-native';
+import MenuScreen from './screens/MenuScreen';
+
 
 /*zona2: main - hogar de los componetes */
 export default function App() {
   return (
     <View style={styles.container}>
-      
-      <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
 
-      <Perfil2 estiloE={styles.targetaVerde}
-      nombre="Chabela" 
-      carrera="Sitemas" 
-      materia="programacion movil" 
-      cuatri="noveno"
-      >
-      </Perfil2>
-
-      <Perfil2 estiloE={styles.targetaRoja} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+      <MenuScreen/>
       
+    <StatusBar style='auto'/>
 
     </View>
   );
@@ -32,12 +22,12 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#1586d6',
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection:'column',
+    
   },
-  targetaRoja:{backgroundColor:'#FF6B6B'},
-  targetaVerde:{backgroundColor:'#6BCB77'},
+
 });
 
