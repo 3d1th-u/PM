@@ -1,175 +1,182 @@
-/*zona1: importaciones de componentes y archivos */
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
-import { Perfil2 } from '../components/Perfil';
-
-
-/*zona2: main - hogar de los componetes */
-export default function SafeAreaScreen() {
-  return (
-
-    <SafeAreaView style={styles.container}>
-
-      <ScrollView>
-        <Text>Aquí va la practica de Ivet o Gaby gaby</Text>
-
-        <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-        <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-        <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-        <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-
-        <ScrollView horizontal={true}>
-
-          <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-          <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-          <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-          <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-          <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-          <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-
-
-        </ScrollView>
-        
-        <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-        <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-        <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-        <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
-
-      <StatusBar style='auto'/>
-
-      </ScrollView>  
-
-    </SafeAreaView>
-  );
-}
-
-/*zona3: estilos y posicionamiento */
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    width:450,
-    margin: 50,
-  },
-  targetaRoja:{backgroundColor:'#FF6B6B'},
-  targetaVerde:{backgroundColor:'#6BCB77'},
-  
-});
-
-
 
 // /*zona1: importaciones de componentes y archivos */
 // import { StatusBar } from 'expo-status-bar';
-// import { StyleSheet, Text, View, ScrollView, SafeAreaView, Switch, SafeAreaViewBase} from 'react-native';
-// import React, { useState } from 'react';
+// import { StyleSheet, Text, View, SafeAreaView, ScrollView} from 'react-native';
+// import { Perfil2 } from '../components/Perfil';
 
 
 // /*zona2: main - hogar de los componetes */
 // export default function SafeAreaScreen() {
-
-//   const {activo, setActivo} = useState(true);
-//   const Contenedor = activo ? SafeAreaView: View;
-
 //   return (
 
-//     <Contenedor style = {styles.fondo}>
+//     <SafeAreaView style={styles.container}>
 
-//     <Text style ={styles.titulo}> SafeAreaView, ScrollView</Text>
+//       <ScrollView>
+//         <Text>Aquí va la practica de Ivet o Gaby gaby</Text>
 
-//     <Text style ={styles.descripcion}> SafeAreaView, ScrollView</Text>
+//         <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+//         <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+//         <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+//         <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
 
-//     <View style= {styles.fila}>
-//       <Text style={styles.etiqueta}> Activar SafeAreaView</Text>
+//         <ScrollView horizontal={true}>
 
-//       <Switch/>
-//     </View>
-
-//     <Text style ={styles.descripcion}> ScrollView ScrollView </Text>
-
-//     <ScrollView style = {styles.lista}>
-//       <View style={[styles.tarjeta,{backgroundColor: 'Red'}]}>
-//         <Text style = {styles.textoTarjeta}>elemento 1</Text>
-//       </View>
-
-//       <View style={[styles.tarjeta,{backgroundColor: 'Red'}]}>
-//         <Text style = {styles.textoTarjeta}>elemento 2</Text>
-//       </View>
-
-//       <View style={[styles.tarjeta,{backgroundColor: 'Red'}]}>
-//         <Text style = {styles.textoTarjeta}>elemento 3</Text>
-//       </View>
-
-//       <View style={[styles.tarjeta,{backgroundColor: 'Red'}]}>
-//         <Text style = {styles.textoTarjeta}>elemento 4</Text>
-//       </View>
-
-//       <View style={[styles.tarjeta,{backgroundColor: 'Red'}]}>
-//         <Text style = {styles.textoTarjeta}>elemento 5</Text>
-//       </View>
-
-//       <View style={[styles.tarjeta,{backgroundColor: 'Red'}]}>
-//         <Text style = {styles.textoTarjeta}>elemento 6 </Text>
-//       </View>
-
-//       <View style={[styles.tarjeta,{backgroundColor: 'Red'}]}>
-//         <Text style = {styles.textoTarjeta}>elemento 7</Text>
-//       </View>
-//     </ScrollView>
+//           <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+//           <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+//           <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+//           <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+//           <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+//           <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
 
 
-//     </Contenedor>
+//         </ScrollView>
+        
+//         <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+//         <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+//         <Perfil2 estiloE={styles.targetaRoja} nombre="Edith Uribe" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
+//         <Perfil2 estiloE={styles.targetaVerde} nombre="Axel GR" carrera="Sitemas" materia="programacion movil" cuatri="noveno"></Perfil2>
 
+//       <StatusBar style='auto'/>
+
+//       </ScrollView>  
+
+//     </SafeAreaView>
 //   );
 // }
 
 // /*zona3: estilos y posicionamiento */
 // const styles = StyleSheet.create({
-//   fondo: {
+//   container: {
 //     flex: 1,
-//     backgroundColor: '#1a1a2e',
-//     padding: 20,
+//     backgroundColor: '#fff',
+//     width:450,
+//     margin: 50,
 //   },
-//   titulo: {
-//     fontSize: 22,
-//     fontWeight: 'bold',
-//     color: '#ffffff',
-//     textAlign: 'center',
-//     marginBottom: 10,
-//   },
-//   descripcion: {
-//     fontSize: 13,
-//     color: '#aaaaaa',
-//     textAlign: 'center',
-//     marginBottom: 12,
-//   },
-//   fila: {
-//     flexDirection: 'row',
-//     justifyContent: 'space-between',
-//     alignItems: 'center',
-//     backgroundColor: 'rgba(255,255,255,0.08)',
-//     borderRadius: 12,
-//     padding: 12,
-//     marginBottom: 16,
-//   },
-//   etiqueta: {
-//     color: '#ffffff',
-//     fontSize: 14,
-//   },
-//   lista: {
-//     flex: 1,
-//   },
-//   tarjeta: {
-//     height: 80,
-//     borderRadius: 12,
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     marginBottom: 12,
-//   },
-//   textoTarjeta: {
-//     color: '#ffffff',
-//     fontSize: 16,
-//     fontWeight: 'bold',
-//   },
+//   targetaRoja:{backgroundColor:'#FF6B6B'},
+//   targetaVerde:{backgroundColor:'#6BCB77'},
+  
 // });
+
+
+
+/* Zona 1: Importaciones */
+import React, { useState } from 'react';
+import {
+  SafeAreaView,
+  ScrollView,
+  View,
+  Text,
+  StyleSheet,
+  Switch,
+} from 'react-native';
+
+/* Zona 2: Componente */
+export default function SafeAreaScreen() {
+
+  const [activo, setActivo] = useState(true);
+
+  const Contenedor = activo ? SafeAreaView : View;
+
+  return (
+    <Contenedor style={styles.fondo}>
+
+      <Text style={styles.titulo}>SafeAreaView y ScrollView</Text>
+
+      <Text style={styles.descripcion}>
+        SafeAreaView evita que el contenido se tape con el notch del celular.
+        Apaga el switch para ver la diferencia.
+      </Text>
+
+      <View style={styles.fila}>
+        <Text style={styles.etiqueta}> Activar SafeAreaView </Text>
+        
+        {/* Parte importante */}
+        <Switch
+          value={activo}
+          onValueChange={(valor) => setActivo(valor)}
+        />
+      </View>
+
+      <Text style={styles.descripcion}>
+        ScrollView permite hacer scroll cuando hay mucho contenido.
+      </Text>
+
+      <ScrollView style={styles.lista}>
+        <View style={[styles.tarjeta, { backgroundColor: '#e74c3c' }]}>
+          <Text style={styles.textoTarjeta}>Elemento 1</Text>
+        </View>
+        <View style={[styles.tarjeta, { backgroundColor: '#3498db' }]}>
+          <Text style={styles.textoTarjeta}>Elemento 2</Text>
+        </View>
+        <View style={[styles.tarjeta, { backgroundColor: '#2ecc71' }]}>
+          <Text style={styles.textoTarjeta}>Elemento 3</Text>
+        </View>
+        <View style={[styles.tarjeta, { backgroundColor: '#f39c12' }]}>
+          <Text style={styles.textoTarjeta}>Elemento 4</Text>
+        </View>
+        <View style={[styles.tarjeta, { backgroundColor: '#9b59b6' }]}>
+          <Text style={styles.textoTarjeta}>Elemento 5</Text>
+        </View>
+        <View style={[styles.tarjeta, { backgroundColor: '#1abc9c' }]}>
+          <Text style={styles.textoTarjeta}>Elemento 6</Text>
+        </View>
+        <View style={[styles.tarjeta, { backgroundColor: '#727272' }]}>
+          <Text style={styles.textoTarjeta}>Elemento 7</Text>
+        </View>
+      </ScrollView>
+
+    </Contenedor>
+  );
+}
+
+/* Zona 3: Estilos */
+const styles = StyleSheet.create({
+  fondo: {
+    flex: 1,
+    backgroundColor: '#1a1a2e',
+    padding: 20,
+  },
+  titulo: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#ffffff',
+    textAlign: 'center',
+    marginBottom: 10,
+  },
+  descripcion: {
+    fontSize: 13,
+    color: '#aaaaaa',
+    textAlign: 'center',
+    marginBottom: 12,
+  },
+  fila: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: 'rgba(255,255,255,0.08)',
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 16,
+  },
+  etiqueta: {
+    color: '#ffffff',
+    fontSize: 14,
+  },
+  lista: {
+    flex: 1,
+  },
+  tarjeta: {
+    height: 80,
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 12,
+  },
+  textoTarjeta: {
+    color: '#ffffff',
+    fontSize: 16,
+    fontWeight: 'bold',
+  },
+});
 
 
