@@ -74,12 +74,10 @@ import {
 export default function SafeAreaScreen() {
 
   const [activo, setActivo] = useState(true);
-
   const Contenedor = activo ? SafeAreaView : View;
 
   return (
     <Contenedor style={styles.fondo}>
-
       <Text style={styles.titulo}>SafeAreaView y ScrollView</Text>
 
       <Text style={styles.descripcion}>

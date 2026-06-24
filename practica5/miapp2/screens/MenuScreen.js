@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, Button} from 'react-native';
 import React,{useState} from 'react';
 import TarjetasScreen from './TarjetasScreen';
 import SafeAreaScreen from './SafeAreaScreen';
+import PressableSwitchScreen from './PressableSwitchScreen';
 
 
 /*zona2: main - hogar de los componetes */
@@ -18,7 +19,7 @@ export default function MenuScreen() {
         case 'safeArea':
             return <SafeAreaScreen/>
         case 'pressable':
-            return <PressableScreen/>
+            return <PressableSwitchScreen/>
         case 'textinput':
             return <TextInputScreen/>
         case 'flatlist':
