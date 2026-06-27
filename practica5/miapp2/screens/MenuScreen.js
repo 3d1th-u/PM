@@ -6,6 +6,8 @@ import React,{useState} from 'react';
 import TarjetasScreen from './TarjetasScreen';
 import SafeAreaScreen from './SafeAreaScreen';
 import PressableSwitchScreen from './PressableSwitchScreen';
+import TextInputScreen from './TextInputScreen';
+import FlatListScreen from './FlatListScreen';
 
 
 /*zona2: main - hogar de los componetes */
