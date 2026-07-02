@@ -8,6 +8,7 @@ import SafeAreaScreen from './SafeAreaScreen';
 import PressableSwitchScreen from './PressableSwitchScreen';
 import TextInputScreen from './TextInputScreen';
 import FlatListScreen from './FlatListScreen';
+import ImageBackgroungScreen from './ImageBackgroungScreen';
 
 
 /*zona2: main - hogar de los componetes */
@@ -28,10 +29,10 @@ export default function MenuScreen() {
             return <FlatListScreen/>
         case 'imagebackgroung':
             return <ImageBackgroungScreen/>
-        case 'activityindicator':
-            return <ActivityIndicatorScreen/>
-        case 'modal':
-            return <ModalBottomSheetScreen/>
+        //case 'activityindicator':
+        //    return <ActivityIndicatorScreen/>
+        //case 'modal':
+        //    return <ModalBottomSheetScreen/>
         
         case 'menu':
             default:
@@ -71,8 +72,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection:'column',
-    width: 420, 
-    margin: 100,
+    //width: 420, 
+    //margin: 100,
     borderRadius: 10,
     gap:16,
   },
