@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import {
   View,
@@ -8,25 +7,16 @@ import {
   ActivityIndicator
 } from 'react-native';
 
-import * as SplashScreen from 'expo-splash-screen';
-
-
-SplashScreen.preventAutoHideAsync().catch(() => {
-  /* Manejar errores silenciosos */
-});
-
-export default function ImageBackgroungScreen() {
+export default function ImageBackgroundScreen() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function prepararAplicacion() {
       try {
-        
         await new Promise((resolve) => setTimeout(resolve, 3000));
       } catch (e) {
         console.warn(e);
       } finally {
-        
         setLoading(false);
       }
     }
@@ -34,15 +24,6 @@ export default function ImageBackgroungScreen() {
     prepararAplicacion();
   }, []);
 
-  
-  useEffect(() => {
-    if (!loading) {
-      
-      SplashScreen.hideAsync();
-    }
-  }, [loading]);
-
-  
   if (loading) {
     return (
       <View style={styles.splash}>
@@ -52,14 +33,13 @@ export default function ImageBackgroungScreen() {
     );
   }
 
-  
   return (
     <ImageBackground
       source={{ uri: 'https://picsum.photos/500/900' }}
       style={styles.background}
       resizeMode="cover"
     >
-      {/* El overlay ayuda a que los textos blancos contrasten y sean legibles */}
+      {}
       <View style={styles.overlay}>
         <Text style={styles.titulo}>Bienvenido a React Native</Text>
         <Text style={styles.subtitulo}>
@@ -83,14 +63,14 @@ const styles = StyleSheet.create({
     color: '#333333',
   },
   background: {
-    flex: 1, 
+    flex: 1,
     width: '100%',
   },
   overlay: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.4)', 
+    backgroundColor: 'rgba(0, 0, 0, 0.4)',
     paddingHorizontal: 20,
   },
   titulo: {
@@ -106,4 +86,3 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
-
