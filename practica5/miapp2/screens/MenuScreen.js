@@ -9,6 +9,8 @@ import PressableSwitchScreen from './PressableSwitchScreen';
 import TextInputScreen from './TextInputScreen';
 import FlatListScreen from './FlatListScreen';
 import ImageBackgroungScreen from './ImageBackgroungScreen';
+import ActivityIndicatorScreen from './ActivityIndicatorScreen';
+import ModalBottomSheetScreen from './ModalBottomSheetScreen';
 
 
 /*zona2: main - hogar de los componetes */
@@ -29,10 +31,10 @@ export default function MenuScreen() {
             return <FlatListScreen/>
         case 'imagebackgroung':
             return <ImageBackgroungScreen/>
-        //case 'activityindicator':
-        //    return <ActivityIndicatorScreen/>
-        //case 'modal':
-        //    return <ModalBottomSheetScreen/>
+        case 'activityindicator':
+            return <ActivityIndicatorScreen/>
+        case 'modal':
+            return <ModalBottomSheetScreen/>
         
         case 'menu':
             default:
