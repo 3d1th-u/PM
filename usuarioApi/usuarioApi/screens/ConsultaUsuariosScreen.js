@@ -1,55 +1,52 @@
 import React,{useState, useEffect} from 'react';
-import {SafeAreaView,View,Text,FlatList,StyleSheet,
+import {SafeAreaView,View,Text,FlatList,StyleSheet, Pressable
 } from 'react-native';
+import { useRouter } from 'expo-router';
 
 export default function ConsultaUsuariosScreen() {
 
+  const router = useRouter();
+
   const [usuarios, setUsuarios] = useState([]);
+
   const obtenerUsuarios = async () => {
     try {
-      const respuesta = await fetch('http://192.168.100.19:5000/v1/usuarios/');
+      //const respuesta = await fetch('http://192.168.100.19:5000/v1/usuarios/');
+      const respuesta = await fetch('http://172.20.10.3:5000/v1/usuarios/');
       const datos = await respuesta.json();
-      setUsuarios(datos);
-      console.log('Respuesta API: ', datos);
-      setUsuarios(datos.usuarios)
-
+      setUsuarios(datos.usuarios || datos);
     } catch (error) {
       console.log('Error al obtener los usuarios:', error);
     }
   };
 
-  useEffect(() => { obtenerUsuarios();},[]);
+  useEffect(() => { obtenerUsuarios(); }, []);
 
   const renderTarjeta = ({ item }) => (
     <View style={styles.card}>
-
       <Text style={styles.nombre}>{item.nombre}</Text>
-
       <View style={styles.linea}></View>
-
-      <Text style={styles.info}>
-        Edad: {item.edad} años
-      </Text>
-
+      <Text style={styles.info}>Edad: {item.edad} años</Text>
+      
+      <Pressable onPress={() => router.push({ 
+        pathname: '/detalles', 
+        params: { id: item.id, nombre: item.nombre, edad: item.edad } 
+      })}>
+        <Text style={styles.linkDetalles}>Ver detalles →</Text>
+      </Pressable>
     </View>
   );
 
   return (
-
     <SafeAreaView style={styles.container}>
-
-      <Text style={styles.titulo}>
-        Lista de Usuarios
-      </Text>
-
+      <Text style={styles.titulo}>Lista de Usuarios</Text>
       <FlatList
         data={usuarios}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id ? item.id.toString() : Math.random().toString()}
         renderItem={renderTarjeta}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingBottom: 20 }}
       />
-
     </SafeAreaView>
   );
   
@@ -103,5 +100,13 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#4B5563',
   },
+
+  linkDetalles: { 
+    fontSize: 14, 
+    color: '#3B82F6', 
+    textAlign: 'right', 
+    fontWeight: 'bold' 
+  }, 
+
 
 });
